@@ -82,19 +82,19 @@ public:
         len++;
     }
 
-    void insert(int index, int value) {
-        Node *new_node = new Node(value, nullptr);
-        Node *temp = start_node;
-        for (int i = 0; i < len; i++) {
-            temp = temp->get_next();
-            if (i == index)
-                break;
-        }
-        Node *next_node = temp->get_next();
-        temp->set_next(new_node);
-        new_node->set_next(next_node);
-        len++;
-    }
+//    void insert(int index, int value) {
+//        Node *new_node = new Node(value, nullptr);
+//        Node *temp = start_node;
+//        for (int i = 0; i < len; i++) {
+//            temp = temp->get_next();
+//            if (i == index)
+//                break;
+//        }
+//        Node *next_node = temp->get_next();
+//        temp->set_next(new_node);
+//        new_node->set_next(next_node);
+//        len++;
+//    }
 
     Node *at(int index) {
         Node *temp = start_node;
@@ -122,14 +122,14 @@ LinkedList *LinkedList::self = nullptr;
 int main() {
     LinkedList myList(5);
     LinkedList my_another_list;
-//    for (int i=6; i<25; i++){
-//        myList.add_to_end(i);
-//    }
+    for (int i=6; i<25; i++){
+        myList.add_to_end(i);
+    }
     for (int i = 4; i > 0; i--) {
         myList.add_to_start(i);
     }
 //    myList.insert(10, 99);
-//    myList.print_list();
+    myList.print_list();
     my_another_list.get_back_my_linked_list()->at(0)->print();
     myList.at(0)->print();
     return 0;
